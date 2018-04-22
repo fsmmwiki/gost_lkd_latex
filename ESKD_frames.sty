@@ -1,0 +1,172 @@
+%  Copyright (C) 2017 Yuri Stepanenko stepanenkoyra@gmail.com
+
+% This program is free software; you can redistribute it
+% and/or modify it under the terms of the GNU Library General Public
+% License as published by the Free Software Foundation; either version 2
+% of the License, or (at your option) any later version.
+
+% The GNU LIBICONV Library is distributed in the hope that it will be
+% useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+% Library General Public License for more details. 
+
+% You should have received a copy of the GNU Library General Public
+% License along with the 'eskdi'; see the file License.gpl.
+% If not, write to the Free Software Foundation, Inc., 59 Temple Place -
+% Suite 330, Boston, MA 02111-1307, USA.
+
+\NeedsTeXFormat{LaTeX2e}
+
+\RequirePackage{ifthen}
+\RequirePackage{eso-pic}
+\RequirePackage{everyshi}
+\RequirePackage{lastpage}
+\RequirePackage{everypage}
+
+\RequirePackage{for_all_styles}
+
+\ProvidesPackage{ESKD_frames} [2017/02/11 v4.2 GOST Frames]
+
+
+
+\newcommand{\DrawBorder}
+{%
+  \begin{picture}(0,0)%
+    \setlength{\unitlength}{1mm}%
+    \linethickness{\pcbdoclinethick}%
+    \put(0,0){\line(1,0){185}}% нижняя линия
+    \put(0,287){\line(1,0){185}}% верхняя линия
+    \put(0,0){\line(0,1){287}}% левая линия
+    \put(185,0){\line(0,1){287}}% правая линия
+  \end{picture}%
+}%
+
+
+\newcommand{\DrawStampFirst}
+{%
+  \begin{picture}(0,0)%
+    \setlength{\unitlength}{1mm}%
+    \linethickness{\pcbdoclinethick}%
+    \put(0,40){\line(1,0){185}}%
+    \put(0,25){\line(1,0){185}}%
+    \put(135,20){\line(1,0){50}}%
+    \put(135,15){\line(1,0){50}}%
+    \put(7,40){\line(0,-1){15}}%
+    \put(17,40){\line(0,-1){40}}%
+    \put(40,40){\line(0,-1){40}}%
+    \put(55,40){\line(0,-1){40}}%
+    \put(65,40){\line(0,-1){40}}%
+    \put(135,25){\line(0,-1){25}}%
+    \put(150,25){\line(0,-1){10}}%
+    \put(167,25){\line(0,-1){10}}%
+    \put(0,35){\line(1,0){65}}%
+    \put(0,30){\line(1,0){65}}%
+    \put(0,20){\line(1,0){65}}%
+    \put(0,15){\line(1,0){65}}%
+    \put(0,10){\line(1,0){65}}%
+    \put(0,5){\line(1,0){65}}%
+    \put(140,20){\line(0,-1){5}}%
+    \put(145,20){\line(0,-1){5}}%
+    \spformedboxmm{0}{25}{7}{29.1}{tc}{\stampnormalfont Изм.}
+    \spformedboxmm{7}{25}{17}{29.1}{tc}{\stampnormalfont Лист}
+    \spformedboxmm{17}{25}{40}{29.1}{tc}{\stampnormalfont № докум.}
+    \spformedboxmm{40}{25}{55}{29.1}{tc}{\stampnormalfont Подпись} 
+    \spformedboxmm{55}{25}{65}{29.1}{tc}{\stampnormalfont Дата}
+    \spformedboxmm{1}{20}{17}{24.1}{tl}{\stampnormalfont Разраб.}
+    \spformedboxmm{1}{15}{17}{19.1}{tl}{\stampnormalfont Пров.}
+    \spformedboxmm{1}{5}{17}{9.1}{tl}{\stampnormalfont Н. контр.}
+    \spformedboxmm{1}{0}{17}{4.1}{tl}{\stampnormalfont Утв.}
+
+    \spformedboxmm{17.5}{20}{40}{24.1}{tl}{\stampnormalfont \@gostrazrabotchik}
+    \spformedboxmm{17.5}{15}{40}{19.1}{tl}{\stampnormalfont \@gostproveril}
+    \spformedboxmm{17.5}{5}{40}{9.1}{tl}{\stampnormalfont \@gostnormokontroler}
+    \spformedboxmm{17.5}{0}{40}{4.1}{tl}{\stampnormalfont \@gostutverdil}
+    
+    \spformedboxmm{40}{20.7}{55}{25}{bс}{\stampnormalfont }
+    \spformedboxmm{40}{15.7}{55}{20}{bс}{\stampnormalfont }
+    \spformedboxmm{40}{5.7}{55}{10}{bс}{\stampnormalfont }
+    \spformedboxmm{40}{0.7}{55}{5}{bс}{\stampnormalfont }    
+    
+    \spformedboxmm{135}{20}{150}{24.1}{tс}{\stampnormalfont Лит.}    
+    \spformedboxmm{150}{20}{167}{24.1}{tс}{\stampnormalfont Лист}  
+    \spformedboxmm{167}{20}{185}{24.1}{tс}{\stampnormalfont Листов}  
+    
+    \spformedboxmm{135}{15}{140}{19.1}{tс}{\stampnormalfont \@gostliteraI}    
+    \spformedboxmm{140}{15}{145}{19.1}{tс}{\stampnormalfont \@gostliteraII} 
+
+
+    \spformedboxmm{150}{15}{167}{19.1}{tc}{\stampnormalfont \thepage}
+    \spformedboxmm{167}{15}{185}{19.1}{tc}{\stampnormalfont \pageref{LastPage}}
+    
+    \spformedboxmm{65}{30}{185}{35}{tc}{\stampLarge \@gostklgi}
+ 
+     \spformedboxmm{55}{20}{65}{24.0}{tc}{\stampnormalfont \@gostDATErazrabotchik}
+    \spformedboxmm{55}{15}{65}{19.0}{tc}{\stampnormalfont \@gostDATEproveril}
+
+    \spformedboxmm{55}{5}{65}{9.0}{tc}{\stampnormalfont \@gostDATEnormokontroler}
+    \spformedboxmm{55}{0}{65}{4.0}{tc}{\stampnormalfont \@gostDATEutverdil}
+    
+    \SetTitleDocumentInSecondPage  
+  \end{picture}%
+}%
+
+
+\newcommand{\SetTitleDocumentInSecondPage}
+{%
+    \spboxmm{65}{0}{120}{25}{lc}{\parbox{70mm}{\centering \stampnormalfont{\\ \@gosttitledocument} }}
+}%
+
+\newcommand{\DrawStampNext}
+{%
+  \begin{picture}(0,0)%
+    \setlength{\unitlength}{1mm}%
+    \linethickness{\pcbdoclinethick}%
+ %   \ifthenelse{\equal{\pcbdocpapersize}{a4}}{}{\put(0,0){\line(0,1){15}}}%
+    \put(7,0){\line(0,1){15}}%
+    \put(17,0){\line(0,1){15}}%
+    \put(40,0){\line(0,1){15}}%
+    \put(55,0){\line(0,1){15}}%
+    \put(65,0){\line(0,1){15}}%
+    \put(175,0){\line(0,1){15}}%
+    \put(185,0){\line(0,1){15}}%
+    \put(0,15){\line(1,0){185}}%
+    \put(175,8){\line(1,0){10}}%
+    \linethickness{\pcbdoclinethin}%
+    \put(0,5){\line(1,0){65}}%
+    \put(0,10){\line(1,0){65}}%
+    \spformedboxmm{0}{0}{7}{4.1}{tc}{\stampnormalfont Изм.}
+    \spformedboxmm{7}{0}{17}{4.1}{tc}{\stampnormalfont Лист}
+    \spformedboxmm{17}{0}{40}{4.1}{tc}{\stampnormalfont № докум.}
+    \spformedboxmm{40}{0}{55}{4.1}{tc}{\stampnormalfont Подпись}   
+    \spformedboxmm{55}{0}{65}{4.1}{tc}{\stampnormalfont Дата}
+    \spformedboxmm{175}{8}{185}{13.38}{tc}{\stampnormalfont Лист}    
+    \spformedboxmm{175}{0}{185}{5.5}{tc}{\stampnormalfont \thepage}
+    \spformedboxmm{65}{5}{175}{10}{tc}{\stampLarge \@gostklgi}    
+  \end{picture}%
+}%
+
+
+%Страница обычная%
+\newcommand{\DrawAIV}
+{%
+   \setlength{\unitlength}{1mm}%
+   \begin{picture}(0,0)%
+      \put(0,0){\DrawBorder}%
+      \put(0,0){\DrawStampNext}%	   	   
+   \end{picture}
+}%
+
+
+%Страница содержания%
+\newcommand{\DrawStampPage}
+{%
+  \setlength{\unitlength}{1mm}%
+  \begin{picture}(0,0)%
+    \put(0,0){\DrawBorder}%
+    \put(0,0){\DrawStampFirst}%
+  \end{picture}
+}%
+
+
+
+
