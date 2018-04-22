@@ -125,7 +125,6 @@
 }%
 % end{Верхний колонтитул. Заполняем рамки текстом. Координаты задаются в pt, соответствующие координатам в просмотре}
 
-
 %  собственно команды формирования титульного листа
 \renewcommand{\maketitle}%
 {%
@@ -133,7 +132,32 @@
   \begin{titlepage}%
     \setlength{\unitlength}{1mm}%
     \begin{picture}(100,100)(-75, 147)%
-      \put(-92.8,-29.5){\DrawBorder}%
+    \put(-92.8,-29.5){\DrawBorder}%
+    \put(-92.8,-29.5){\spboxmm{22}{350}{162}{180}{lc}{\parbox{140mm}{\center\scriptsize Министерство образования и науки Российской Федерации\linebreak\small Муромский институт (филиал)\linebreak\scriptsize федерального государственного бюджетного образовательного учреждения\linebreak\scriptsize высшего образования\linebreak\small «Владимирский государственный университет\linebreak\small имени Александра Григорьевича и Николая Григорьевича Столетовых»\linebreak\scriptsize (МИ ВлГУ) \linebreak}}}%	   	   
+    \put(-92.8,-29.5){\spboxmm{22}{270}{162}{180}{lc}{\parbox{140mm}{\center\normalsize Факультет \underline{ \@gostfacylty  }\linebreak\normalsize Кафедра \underline{ \@gostkafedra  } \linebreak}}}%	
+    \put(-92.8,-29.5){\spboxmm{22}{200}{162}{180}{lc}{\parbox{140mm}{\center\Huge\@gosttitleobject\linebreak}}}%	  
+    \put(-92.8,-29.5){\spboxmm{22}{165}{162}{180}{lc}{\parbox{140mm}{\center\normalsize\@gostpredmet\linebreak}}}%	   	  
+    \put(-92.8,-29.5){\spboxmm{22}{170}{162}{180}{lc}{\parbox{140mm}{\flushleft\normalsize По: \hrulefill}}}%
+    \put(-92.8,-29.5){\spboxmm{22}{145}{162}{180}{lc}{\parbox{140mm}{\center\normalsize\@gosttitledocument\linebreak}}}%	   	  
+    \put(-92.8,-29.5){\spboxmm{22}{150}{162}{180}{lc}{\parbox{140mm}{\flushleft\normalsize Тема: \hrulefill}}}%
+    \put(-92.8,-29.5){\spboxmm{90}{120}{162}{180}{lc}{\parbox{70mm}{\flushleft\normalsize Руководитель }}}%	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   
+    \put(-92.8,-29.5){\spboxmm{90}{100}{162}{180}{lc}{\parbox{70mm}{\flushleft\hrulefill}}}%
+    \put(-92.8,-29.5){\spboxmm{90}{105}{162}{180}{lc}{\parbox{70mm}{\center\normalsize\@gostproveril }}}%	 
+    \put(-92.8,-29.5){\spboxmm{90}{95}{162}{180}{lc}{\parbox{70mm}{\center\small (фамилия, инициалы) }}}%	  
+    \put(-92.8,-29.5){\spboxmm{90}{70}{162}{180}{lc}{\parbox{70mm}{\flushleft\hrulefill}}}%
+    \put(-92.8,-29.5){\spboxmm{90}{75}{162}{180}{lc}{\parbox{70mm}{\flushright\normalsize\@gostDATEproveril }}}%	 
+    \put(-92.8,-29.5){\spboxmm{90}{65}{162}{180}{lc}{\parbox{35mm}{\center\small (подпись) }}}% 	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	     	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   
+    \put(-92.8,-29.5){\spboxmm{120}{65}{162}{180}{lc}{\parbox{35mm}{\center\small (дата) }}}% 	
+    \put(-92.8,-29.5){\spboxmm{90}{50}{162}{180}{lc}{\parbox{70mm}{\flushleft\normalsize Студент\hrulefill }}}%
+    \put(-92.8,-29.5){\spboxmm{120}{52}{162}{180}{lc}{\parbox{35mm}{\flushright\normalsize \@gostgroup }}}%	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   
+    \put(-92.8,-29.5){\spboxmm{90}{20}{162}{180}{lc}{\parbox{70mm}{\flushleft\hrulefill}}}%
+    \put(-92.8,-29.5){\spboxmm{90}{25}{162}{180}{lc}{\parbox{70mm}{\center\normalsize\@gostrazrabotchik }}}%	 
+    \put(-92.8,-29.5){\spboxmm{90}{15}{162}{180}{lc}{\parbox{70mm}{\center\small (фамилия, инициалы) }}}%	  
+    \put(-92.8,-29.5){\spboxmm{90}{-10}{162}{180}{lc}{\parbox{70mm}{\flushleft\hrulefill}}}%
+    \put(-92.8,-29.5){\spboxmm{90}{-5}{162}{180}{lc}{\parbox{70mm}{\flushright\normalsize\@gostDATErazrabotchik }}}%	 
+    \put(-92.8,-29.5){\spboxmm{90}{-15}{162}{180}{lc}{\parbox{35mm}{\center\small (подпись) }}}% 	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	     	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   
+    \put(-92.8,-29.5){\spboxmm{120}{-15}{162}{180}{lc}{\parbox{35mm}{\center\small (дата) }}}% 	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	     	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   
+    \put(-92.8,-29.5){\spboxmm{22}{-150}{162}{180}{lc}{\parbox{140mm}{\center\normalsize \@gostcity ,\@gostyear}}}% 	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	     	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	       	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	     	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   	   	      	    	      	       	    	      	   
     \end{picture}%
   \end{titlepage}%
   \addtocounter{page}{1}%

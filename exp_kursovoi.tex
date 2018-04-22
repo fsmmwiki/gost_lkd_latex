@@ -60,17 +60,12 @@
 \usepackage{makecell} % Для многострочных ячеек таблицы
 \usepackage{colortbl} % Для раскрашивания ячеек в таблицах
 
-
-%{Arial} {Courier New} 
-%{OpenGost Type A TT} {OpenGost Type B TT} % Свободный шрифт. Нет наклонного начертания и дирного начертания
-%{GOST type A} % Морально устарел, не свободный, не хватает символа тирэ. Не рекомендуется
-%{GOST type B} % Морально устарел, не свободный, не хватает символа тирэ. Не рекомендуется
 \gostSetRomanfont{PT Astra Serif}%
 \gostSetSansfont{PT Astra Serif}%
 \gostSetMonofont{PT Astra Serif}%
 \gostSetMainfont{PT Astra Serif}%
 \gostSetStampfont{PT Astra Serif}%
-\verbatimfont{\fontspec[Scale=1.0]{PTAstraSerif} \itshape}% % Для замены стиля начертания verbatim и verb
+\verbatimfont{\fontspec[Scale=1.0]{PT Astra Serif} \itshape}% % Для замены стиля начертания verbatim и verb
 
 %\renewcommand{\SetStampfontIt}{\itshape}%
 
@@ -78,12 +73,7 @@
 
 \input commands.tex %Файл включает такие команды как надчёркивание, запрещение переноса ТУ и др.
 
-
-
-
 \setpage % Разметка текста на странице
-
-
 
 
 \begin{document}% Начало самого документа (содержательной части)
@@ -94,10 +84,7 @@
 
 \makesecondpage
 
-
 \tableofcontents % Содержание
-
-
 
 \input ./content/about_begin.tex
 \input ./content/about_latex.tex
@@ -105,8 +92,6 @@
 
 \appendix % Приложения. Можно разместить перед списком литературы - тогда список литературы оформится как приложение
 \clearpage
-
-\input ./content/about_bibliography.tex
 
 \end{document}
 
